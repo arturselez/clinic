@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { BeforeAfterSlider } from '../components/BeforeAfterSlider'
+import { BookCall } from '../components/BookCall'
 import { ImageSlider } from '../components/ImageSlider'
-import { clinic } from '../data/content'
 import { workSections } from '../data/works'
 
 export function WorksPage() {
@@ -56,16 +56,10 @@ export function WorksPage() {
         <div className="container works-cta__inner">
           <h2 className="works-cta__title">Хотите такой же результат?</h2>
           <p className="works-cta__text">
-            Запишитесь на консультацию — врач оценит состояние зубов и предложит
-            план лечения.
+            Позвоните нам — врач оценит состояние зубов и предложит план лечения.
           </p>
           <div className="works-cta__actions">
-            <Link to="/#contact" className="btn btn--primary">
-              Записаться на приём
-            </Link>
-            <a href={clinic.phoneHref} className="btn btn--ghost">
-              {clinic.phone}
-            </a>
+            <BookCall className="book-call--on-dark" />
           </div>
         </div>
       </section>

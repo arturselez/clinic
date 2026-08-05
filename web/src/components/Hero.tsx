@@ -1,6 +1,8 @@
 import { clinic } from '../data/content'
 import { useInView } from '../hooks/useInView'
 import { assetUrl } from '../lib/assets'
+import { BookCall } from './BookCall'
+
 export function Hero() {
   const { ref, visible } = useInView()
 
@@ -22,12 +24,7 @@ export function Hero() {
           </p>
 
           <div className="hero__cta">
-            <a href="#contact" className="btn btn--primary">
-              Записаться на приём
-            </a>
-            <a href={clinic.phoneHref} className="btn btn--ghost">
-              {clinic.phone}
-            </a>
+            <BookCall />
           </div>
 
           <dl className="hero__meta">

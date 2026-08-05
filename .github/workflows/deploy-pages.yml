@@ -35,8 +35,6 @@ jobs:
         env:
           # Project Pages: https://user.github.io/REPO/
           GITHUB_PAGES_BASE: /${{ github.event.repository.name }}/
-          # Public Worker URL (not a secret, but convenient in GitHub Secrets)
-          VITE_CONTACT_API_URL: ${{ secrets.VITE_CONTACT_API_URL }}
         run: npm run build
 
       - uses: actions/upload-pages-artifact@v3

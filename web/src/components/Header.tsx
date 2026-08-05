@@ -2,6 +2,7 @@ import { useEffect, useState, type ReactNode } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { clinic, navItems } from '../data/content'
 import { assetUrl } from '../lib/assets'
+import { BookCall } from './BookCall'
 
 function NavLink({
   href,
@@ -74,12 +75,7 @@ export function Header() {
         </nav>
 
         <div className="header__actions">
-          <a href={clinic.phoneHref} className="header__phone">
-            {clinic.phone}
-          </a>
-          <Link to="/#contact" className="btn btn--primary btn--sm">
-            Записаться
-          </Link>
+          <BookCall size="sm" />
         </div>
 
         <button
@@ -100,31 +96,22 @@ export function Header() {
       >
         <div className="header__mobile-backdrop" aria-hidden="true" />
         <div className="header__mobile-panel">
-        <nav aria-label="Мобильная навигация">
-          <ul className="header__mobile-list">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <NavLink
-                  href={item.href}
-                  className="header__mobile-link"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {item.label}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <a href={clinic.phoneHref} className="header__mobile-phone">
-          {clinic.phone}
-        </a>
-        <Link
-          to="/#contact"
-          className="btn btn--primary"
-          onClick={() => setMenuOpen(false)}
-        >
-          Записаться на приём
-        </Link>
+          <nav aria-label="Мобильная навигация">
+            <ul className="header__mobile-list">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <NavLink
+                    href={item.href}
+                    className="header__mobile-link"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <BookCall onClick={() => setMenuOpen(false)} />
         </div>
       </div>
     </header>

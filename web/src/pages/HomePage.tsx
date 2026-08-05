@@ -1,6 +1,5 @@
 import { About } from '../components/About'
 import { Advantages } from '../components/Advantages'
-import { Contact } from '../components/Contact'
 import { Hero } from '../components/Hero'
 import { Portfolio } from '../components/Portfolio'
 import { Prices } from '../components/Prices'
@@ -16,7 +15,6 @@ export function HomePage() {
       <Services />
       <Prices />
       <Portfolio />
-      <Contact />
       <YandexMap />
     </>
   )
